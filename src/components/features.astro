@@ -1,0 +1,57 @@
+---
+import { Icon } from "astro-icon/components";
+import ContentSection from "~/components/content-section.astro";
+import type { FeatureItem } from "~/types";
+
+const features: Array<FeatureItem> = [
+  {
+    title: "مفتوح المصدر",
+    description:
+      "تطبيق اشور مفتوح المصدر بالكامل ويمكن لأي شخص المساهمة فيه او النظر اليه",
+    icon: "mdi:handshake",
+  },
+  {
+    title: "خفيف",
+    description: "حجم تطبيق اشور للاندرويد فقط 60 ميقابايت للاندرويد",
+    icon: "mdi:feather",
+  },
+  {
+    title: "ذكاء اصطناعي خارق",
+    description:
+      "GPT-4.1 يوفر تطبيق اشور ذكاء اصطناعي ذكي وسريع مجانا مبني على",
+    icon: "mdi:robot",
+  },
+  {
+    title: "بوتات",
+    description:
+      "يدعم تطبيق اشور ميزة البوتات حيث يتم برمجتها بأي لغة برمجة تقريبا",
+    icon: "mdi:graph",
+  },
+  {
+    title: "البحث",
+    description: "ابحث عن مستخدمين ومنشورات بسرعة ودقة",
+    icon: "mdi:search",
+  },
+  {
+    title: "مجتمع",
+    description: "تطبيق اشور مفتوح المصدر ويعتمد على المجتمع في تطويره",
+    icon: "mdi:account-group",
+  },
+];
+---
+
+<ContentSection title="المميزات" id="features">
+  <ul class="grid max-w-6xl grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+    {
+      features.map(({ title, description, icon }) => (
+        <li class="flex flex-col items-center gap-4 border border-default bg-offset p-6">
+          <div class="size-16 rounded-full border-2 border-current p-3">
+            <Icon name={icon} class="size-full" />
+          </div>
+          <p class="text-center font-extrabold text-xl">{title}</p>
+          <p class="text-center text-offset text-sm">{description}</p>
+        </li>
+      ))
+    }
+  </ul>
+</ContentSection>
